@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+@layer components {
+
+    body {
+        @apply
+        /* bg-zinc-100 */
+        bg-sky-300
+    }
+
+    .card {
+        @apply
+            bg-neutral-50
+            rounded-[10px]
+            py-10
+            px-[23px]
+            my-[26px]
+            mx-auto
+    }
+}
