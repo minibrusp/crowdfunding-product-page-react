@@ -12,7 +12,8 @@ function Burger({isBurgerOpen, handleBurgerClick} : BurgerProps) {
         name="burgerMenuCheckbox" 
         id="burgerMenuCheckbox" 
         className="peer hidden"
-        checked={isBurgerOpen} 
+        checked={isBurgerOpen}
+        readOnly={true} 
       />
       <label 
         htmlFor="burgerMenuCheckbox" 
