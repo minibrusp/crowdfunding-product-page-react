@@ -4,7 +4,7 @@ function CardCtaButtons() {
   return (
     <div className="flex justify-center items-center">
         <button 
-          className="bg-primary-moderate-cyan border-none text-white font-bold py-4 px-8 text-[0.9rem] first-of-type:py-5 first-of-type:w-[55vw] rounded-[30px]" 
+          className="bg-primary-moderate-cyan border-none text-white font-bold py-4 px-8 first-of-type:text-[0.9rem] first-of-type:w-[55vw] first-of-type:rounded-[30px]" 
         >
           Back this project
         </button>

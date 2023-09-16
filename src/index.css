@@ -10,10 +10,16 @@
 
 @layer components {
 
+    html {
+        @apply
+        text-base
+    }
+
     body {
         @apply
         /* bg-zinc-100 */
         bg-sky-300
+        text-[1rem]
     }
 
     .card {
@@ -24,5 +30,17 @@
             px-[23px]
             my-[26px]
             mx-auto
+    }
+
+    .rewards_card {
+        @apply
+        p-[23px]
+        mb-[25px]
+        rounded-[10px]
+        relative
+        overflow-hidden
+        border
+        border-solid
+        border-neutral-dark-gray/30
     }
 }

@@ -1,9 +1,13 @@
 import Article from "./Article"
+import PledgeModal from "./PledgeModal"
 
 
 function Main() {
   return (
-    <Article />
+    <>
+      <Article />
+      <PledgeModal />
+    </>
   )
 }
 

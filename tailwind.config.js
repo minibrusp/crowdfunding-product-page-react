@@ -25,6 +25,7 @@ export default {
         'burger-menu': "url('assets/images/icon-hamburger.svg')",
         'burger-close': "url('assets/images/icon-close-menu.svg')",
         'logo-mastercraft': "url('assets/images/logo-mastercraft.svg')",
+        'icon-close-modal': "url('assets/images/icon-close-modal.svg')"
       },
     },
   },
