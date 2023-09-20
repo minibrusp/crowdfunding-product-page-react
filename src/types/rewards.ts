@@ -1,6 +1,8 @@
 export type Reward = {
-    name: string,
-    amount: number,
-    description: string,
-    stock: number
+    "id": number,
+    "name": string,
+    "description": string,
+    "amount": number,
+    "stock": number,
+    "selected"?: boolean
 }

@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { useRewardModal } from "../stores/useRewardModal"
+import { useRewardModalStore } from "../stores/useRewardModalStore"
 
 
 function CardCtaButtons() {
 
   const [isBookMarked, setIsBookMarked] = useState(false)
-  const openRewardModal = useRewardModal((state) => state.setIsModalOpen)
+  const openRewardModal = useRewardModalStore((state) => state.setIsModalOpen)
 
   const handleBookMarkClick = () => {
     setIsBookMarked(prev => !prev)

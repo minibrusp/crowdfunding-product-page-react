@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react"
 
 type StatProps = {
-    value: number,
+    value: number | undefined,
     type: 'backed' | 'backers' | 'days'
 }
 
@@ -24,15 +24,15 @@ function Stat({value, type} : StatProps) {
         } else {
             switch(type) {
                 case 'backed':             
-                    return `$${value.toLocaleString()}`
+                    return `$${value ? value.toLocaleString() : 0 }`
                 case 'backers':
-                    return `${value.toLocaleString()}`
+                    return `${value ? value.toLocaleString() : 0 }`
                 case 'days': 
-                    return `${value}`
+                    return `${value ? value : 0 }`
                     
             }
         }
-    }, [])
+    }, [value])
 
     const calculatedDescription = useMemo(() => setItems('description'), [])
 

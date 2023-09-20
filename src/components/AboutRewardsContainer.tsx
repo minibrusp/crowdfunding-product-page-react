@@ -16,6 +16,7 @@ export default function AboutRewardsContainer() {
     {Rewards.map((reward, index) => (
       <AboutRewards
         key={index}
+        id={reward.id}
         name={reward.name}
         amount={reward.amount}
         description={reward.description}

@@ -1,4 +1,8 @@
+import { useRewardModalStore } from "../stores/useRewardModalStore"
+
+
 type PledgeItemTopProps = {
+  index: number,
 	id: number,
 	value: number,
 	name: string,
@@ -9,9 +13,12 @@ type PledgeItemTopProps = {
 	handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export default function PledgeItemTop({id, value, name, description, stock, isOutOfStock, isSelected, handleChange} : PledgeItemTopProps ) {
+export const PledgeItemTop = ({ index, id, value, name, description, stock, isOutOfStock, isSelected, handleChange} : PledgeItemTopProps ) => {
+
+  const addElementToRef = useRewardModalStore((state) => state.AddModalRewardsRefs)
+
   return (
-    <div className="reward_modal_top py-0 px-[23px]">
+    <div className="reward_modal_top py-0 px-[23px]" ref={el => addElementToRef(el!, index)}>
       <div className="radio_container flex items-center">
         <span className="m-0 mr-[10px] h-6 w-6 border border-solid border-neutral-black/20 rounded-[50%] flex justify-center items-center cursor-pointer">
           <input
@@ -20,7 +27,9 @@ export default function PledgeItemTop({id, value, name, description, stock, isOu
             value={value}
             name="pledges"
             className="peer hidden"
+            checked={isSelected}
             onChange={handleChange}
+            
           />
           <span className={`checkmark w-[calc(100%-10px)] h-[calc(100%-10px)] rounded-[50%] bg-primary-moderate-cyan opacity-0 transition-opacity duration-500 ease-linear ${isSelected && 'peer-checked:opacity-100'}`}></span>
         </span>

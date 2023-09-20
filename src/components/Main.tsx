@@ -1,11 +1,11 @@
 import Article from "./Article"
 import PledgeModal from "./PledgeModal"
-import { useRewardModal } from "../stores/useRewardModal"
+import { useRewardModalStore } from "../stores/useRewardModalStore"
 
 
 function Main() {
 
-  const isModalOpen = useRewardModal((state) => state.isModalOpen)
+  const isModalOpen = useRewardModalStore((state) => state.isModalOpen)
 
   return (
     <>

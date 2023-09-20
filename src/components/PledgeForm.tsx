@@ -13,6 +13,7 @@ export default function PledgeForm() {
 					{
 						items.map((item, index) => (
 							<PledgeItem 
+								index={index}
 								key={index}
 								id={item.id}
 								name={item.name}

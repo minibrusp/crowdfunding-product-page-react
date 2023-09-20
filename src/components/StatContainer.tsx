@@ -1,12 +1,15 @@
 import Stat from "./Stat"
+import { Stats } from "../stores/useStatsStore"
 
-function StatContainer() {
+
+
+function StatContainer({ backed, backers, days} : Stats) {
   return (
     <>
         <div>
-            <Stat value={89914} type="backed" />
-            <Stat value={5007} type="backers" />
-            <Stat value={56} type="days" />
+            <Stat value={backed} type="backed" />
+            <Stat value={backers} type="backers" />
+            <Stat value={days} type="days" />
         </div>
         
     </>

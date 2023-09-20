@@ -1,8 +1,9 @@
 import { useMemo } from "react"
 import PledgeItemBottom from "./PledgeItemBottom"
-import PledgeItemTop from "./PledgeItemTop"
+import {PledgeItemTop} from "./PledgeItemTop"
 
 type PledgeItemProps = {
+  index: number,
 	id: number,
 	value: number,
 	name: string,
@@ -12,7 +13,7 @@ type PledgeItemProps = {
 	setSelected: (id: number) => void
 }
 
-export default function PledgeItem({ id, value, name, description, stock, isSelected, setSelected } : PledgeItemProps) {
+export default function PledgeItem({ index, id, value, name, description, stock, isSelected, setSelected } : PledgeItemProps) {
   
   const isOutOfStock = useMemo(() => {
     return stock < 1 ? true : false
@@ -29,6 +30,7 @@ export default function PledgeItem({ id, value, name, description, stock, isSele
 		>
 
       <PledgeItemTop 
+        index={index}
         id={id}
         value={value}
         name={name}

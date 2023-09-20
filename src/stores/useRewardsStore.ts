@@ -12,7 +12,9 @@ type Reward = {
 type RewardsStore = {
     rewards: Reward[],
     fetchRewards: (data: string) => Promise<void>,
-    setSelected: (id: number) => void
+    setSelected: (id: number) => void,
+    setSelectedReward: (id: number) => void,
+    resetSelected: () => void
 }
 
 export const useRewardsStore = create<RewardsStore>() ((set, get) => ({
@@ -37,5 +39,33 @@ export const useRewardsStore = create<RewardsStore>() ((set, get) => ({
         set(() => ({
             rewards: updated
         }))
-    }
+    },
+    setSelectedReward: (id: number) => {
+        const rewards = get().rewards
+        const updated = rewards.map(reward => {
+            if(reward.id === id) {
+                return {
+                    ...reward,
+                    selected: true,
+                }
+            } else return {
+                ...reward
+            }
+        })
+        set(() => ({
+            rewards: updated
+        }))
+    },
+    resetSelected: () => {
+        const rewards = get().rewards
+        const updated = rewards.map(reward => {
+            return {
+                ...reward,
+                selected: false
+            }
+        })
+        set(() => ({
+            rewards: updated
+        }))
+    },
 }))

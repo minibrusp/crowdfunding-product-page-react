@@ -1,10 +1,24 @@
+import { useStatsStore } from "../stores/useStatsStore"
 import ProgressBar from "./ProgressBar"
 import StatContainer from "./StatContainer"
+import { useEffect } from "react"
 
 function CardStats() {
+
+  const stats = useStatsStore((state) => state.stats)
+  const fetchStats = useStatsStore((state) => state.fetchStats)
+
+  useEffect(() => {
+    fetchStats('http://localhost:3000/stats')
+  }, [])
+
+  useEffect(() => {
+    console.log(stats)
+  }, [stats])
+
   return (
     <div className="card text-center">
-        <StatContainer />
+        <StatContainer backed={stats.backed} backers={stats.backers} days={stats.backers} />
         <ProgressBar value={89915} max={100000} />
     </div>
   )

@@ -1,12 +1,30 @@
 import { useMemo } from "react";
 import { Reward } from "../types/rewards";
+import { useRewardModalStore } from "../stores/useRewardModalStore";
+import { useRewardsStore } from "../stores/useRewardsStore";
 
 
-export default function AboutRewards({ name, amount, description, stock} : Reward) {
+export default function AboutRewards({ id, name, amount, description, stock} : Reward) {
+
+  const openRewardModal = useRewardModalStore((state) => state.setIsModalOpen)
+  const setSelectedReward = useRewardsStore((state) => state.setSelectedReward)
+  const ModalRewardsRefs = useRewardModalStore((state) => state.ModalRewardsRefs)
 
   const isOutofStock = useMemo(() => {
     return stock <= 0 ? true : false
   }, [stock])
+
+  const loopToRefs = async (refs: HTMLDivElement[]) => {
+    await refs[id].scrollIntoView({ behavior: 'smooth', block: 'center'})
+  }
+
+  const handleBtnOnClick = async () => {
+
+    openRewardModal()
+    setSelectedReward(id)
+    await loopToRefs(await ModalRewardsRefs);
+
+  }
 
   return (
     <div className="rewards_card">
@@ -20,7 +38,7 @@ export default function AboutRewards({ name, amount, description, stock} : Rewar
         <button 
           className={`text-white text-sm font-bold border-none py-4 px-8 rounded-[25px] ${isOutofStock ? "bg-neutral-dark-gray" : "bg-primary-moderate-cyan"} `}
           disabled={isOutofStock}
-          onClick={() => console.log('hello')}
+          onClick={handleBtnOnClick}
         >
           { isOutofStock ? "Out of stock" : "Select Reward" }
         </button>
