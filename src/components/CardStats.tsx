@@ -14,7 +14,7 @@ function CardStats() {
 
   return (
     <div className="card text-center">
-        <StatContainer backed={stats.backed} backers={stats.backers} days={stats.backers} />
+        <StatContainer backed={stats.backed} backers={stats.backers} days={stats.days} />
         <ProgressBar value={stats.backed} max={100000} />
     </div>
   )
