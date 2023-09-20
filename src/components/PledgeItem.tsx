@@ -9,11 +9,12 @@ type PledgeItemProps = {
 	name: string,
 	description: string,
   stock: number,
-	isSelected: boolean
-	setSelected: (id: number) => void
+	isSelected: boolean,
+	setSelected: (id: number) => void,
+  noreward?: boolean
 }
 
-export default function PledgeItem({ index, id, value, name, description, stock, isSelected, setSelected } : PledgeItemProps) {
+export default function PledgeItem({ index, id, value, name, description, stock, isSelected, setSelected, noreward } : PledgeItemProps) {
   
   const isOutOfStock = useMemo(() => {
     return stock < 1 ? true : false
@@ -26,7 +27,7 @@ export default function PledgeItem({ index, id, value, name, description, stock,
 
   return (
     <label 
-			className={`rewards_card py-[23px] px-0 cursor-pointer outline-none block ${isSelected && 'border-2 border-solid border-primary-moderate-cyan'} ${isOutOfStock && 'cursor-default'}  `}
+			className={`rewards_card py-[23px] px-0 cursor-pointer outline-none block ${isSelected && 'border-2 border-solid border-primary-moderate-cyan'} ${(isOutOfStock) ? 'cursor-default' : '' }  `}
 		>
 
       <PledgeItemTop 
@@ -39,6 +40,7 @@ export default function PledgeItem({ index, id, value, name, description, stock,
         isOutOfStock={isOutOfStock}
         isSelected={isSelected}
         handleChange={handleChange}
+        noreward={noreward}
       />
 
       { isSelected && 

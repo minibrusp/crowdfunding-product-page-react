@@ -13,16 +13,21 @@ export default function AboutRewardsContainer() {
 
   return (
     <section>        
-    {Rewards.map((reward, index) => (
-      <AboutRewards
-        key={index}
-        id={reward.id}
-        name={reward.name}
-        amount={reward.amount}
-        description={reward.description}
-        stock={reward.stock}
-      />
-    ))}
+    {Rewards.map((reward, index) => {
+      if(reward.noreward) return
+      return (
+        <AboutRewards
+          key={index}
+          id={reward.id}
+          name={reward.name}
+          amount={reward.amount}
+          description={reward.description}
+          stock={reward.stock}
+        />
+      )
+    }
+      
+    )}
     </section>
   )
 }

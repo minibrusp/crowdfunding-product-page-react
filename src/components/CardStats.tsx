@@ -12,14 +12,10 @@ function CardStats() {
     fetchStats('http://localhost:3000/stats')
   }, [])
 
-  useEffect(() => {
-    console.log(stats)
-  }, [stats])
-
   return (
     <div className="card text-center">
         <StatContainer backed={stats.backed} backers={stats.backers} days={stats.backers} />
-        <ProgressBar value={89915} max={100000} />
+        <ProgressBar value={stats.backed} max={100000} />
     </div>
   )
 }

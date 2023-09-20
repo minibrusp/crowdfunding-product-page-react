@@ -2,6 +2,15 @@
   "rewards": [
     {
       "id": 0,
+      "name": "Pledge with no reward",
+      "description": "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
+      "amount": 0,
+      "stock": 999999999999999999999999999999,
+      "selected": false,
+      "noreward": true
+  },
+    {
+      "id": 1,
       "name": "Bamboo Stand",
       "description": "You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.",
       "amount": 25,
@@ -9,7 +18,7 @@
       "selected": false
   },
   {
-      "id": 1,
+      "id": 2,
       "name": "Black Edition Stand",
       "description": "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
       "amount": 75,
@@ -17,7 +26,7 @@
       "selected": false
   },
   {
-      "id": 2,
+      "id": 3,
       "name": "Mahogany Special Edition",
       "description": "You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.",
       "amount": 200,
@@ -25,7 +34,7 @@
       "selected": false
   },
   {
-      "id": 3,
+      "id": 4,
       "name": "Mango Limited Edition",
       "description": "You get a 5 Mango Limited Edition stands, a Backer T-Shirt, a Limited Edition Backpack and a personal thank you You’ll be added to our Backer member list. Shipping is included.",
       "amount": 500,

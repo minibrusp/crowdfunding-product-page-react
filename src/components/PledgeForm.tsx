@@ -8,8 +8,7 @@ export default function PledgeForm() {
 
   return (
     <form action="submit">
-        <fieldset id="rewards__fieldset" className="border-none m-0 p-0">
-					
+        <fieldset id="rewards__fieldset" className="border-none m-0 p-0">					
 					{
 						items.map((item, index) => (
 							<PledgeItem 
@@ -22,6 +21,7 @@ export default function PledgeForm() {
 								stock={item.stock}
 								isSelected={item.selected}
 								setSelected={setSelected}
+								noreward={item.noreward}
 							/>
 						))
 					}

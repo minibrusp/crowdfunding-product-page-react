@@ -1,13 +1,13 @@
 import { useMemo } from "react"
 
 type progressBarProps = {
-    value: number,
+    value?: number,
     max: number
 }
 
 function ProgressBar({ value, max } : progressBarProps ) {
     const percentage = useMemo(() => {
-      return (value / max) * 100
+      return (value! / max) * 100
     }, [value])
   return (
 

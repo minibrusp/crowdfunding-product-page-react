@@ -6,7 +6,8 @@ type Reward = {
     "description": string,
     "amount": number,
     "stock": number,
-    "selected": boolean
+    "selected": boolean,
+    "noreward"?: boolean
 }
 
 type RewardsStore = {

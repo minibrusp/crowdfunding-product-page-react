@@ -9,11 +9,12 @@ type PledgeItemTopProps = {
 	description: string,
   stock: number,
   isOutOfStock: boolean,
-	isSelected: boolean
-	handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+	isSelected: boolean,
+	handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  noreward?: boolean
 }
 
-export const PledgeItemTop = ({ index, id, value, name, description, stock, isOutOfStock, isSelected, handleChange} : PledgeItemTopProps ) => {
+export const PledgeItemTop = ({ index, id, value, name, description, stock, isOutOfStock, isSelected, handleChange, noreward} : PledgeItemTopProps ) => {
 
   const addElementToRef = useRewardModalStore((state) => state.AddModalRewardsRefs)
 
@@ -35,19 +36,23 @@ export const PledgeItemTop = ({ index, id, value, name, description, stock, isOu
         </span>
         <span className={`group cursor-pointer text-[0.9rem] hover:font-bold`}>
           <span className=" font-semibold group-hover:text-primary-moderate-cyan">{name}</span>
-          <span className={`block mx-auto text-primary-moderate-cyan font-medium group-hover:font-bold`}>
-            Pledge ${`${value}`} or more
-          </span>
+          {!noreward && (
+            <span className={`block mx-auto text-primary-moderate-cyan font-medium group-hover:font-bold`}>
+              Pledge ${`${value}`} or more
+            </span>
+          )}
         </span>
       </div>
       <p
         className="text-neutral-dark-gray my-[23px] text-sm leading-[1.7]"
       >{description}</p>
-      <p className="text-neutral-dark-gray my-[23px] text-[15px]">
-        <strong className="text-neutral-black text-[1.2rem] mr-[7px]">{stock}</strong> left
-      </p>
+      {!noreward && (
+        <p className="text-neutral-dark-gray my-[23px] text-[15px]">
+          <strong className="text-neutral-black text-[1.2rem] mr-[7px]">{stock}</strong> left
+        </p>
+      )}
       {
-        isOutOfStock && 
+        (isOutOfStock && !noreward) && 
         <div className="outofstock bg-white opacity-50 absolute left-0 top-0 w-full h-full cursor-default"></div>
       }
     </div>
