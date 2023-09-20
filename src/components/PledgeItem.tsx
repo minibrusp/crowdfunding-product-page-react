@@ -11,11 +11,12 @@ type PledgeItemProps = {
   stock: number,
 	isSelected: boolean,
 	setSelected: (id: number) => void,
-  noreward?: boolean
+  noreward?: boolean,
+  handleFormSubmit: (e: React.MouseEvent, submittedValue: number, id: number) => void
 }
 
-export default function PledgeItem({ index, id, value, name, description, stock, isSelected, setSelected, noreward } : PledgeItemProps) {
-  
+export default function PledgeItem({ index, id, value, name, description, stock, isSelected, setSelected, noreward, handleFormSubmit } : PledgeItemProps) {
+
   const isOutOfStock = useMemo(() => {
     return stock < 1 ? true : false
   }, [stock])
@@ -24,6 +25,12 @@ export default function PledgeItem({ index, id, value, name, description, stock,
     if(isOutOfStock) return
 		setSelected(Number(e.target.id))
 	}
+
+  const handleSubmit = (e: React.MouseEvent, submittedValue: number) => {
+    handleFormSubmit(e, submittedValue, id)
+  }
+
+
 
   return (
     <label 
@@ -47,6 +54,7 @@ export default function PledgeItem({ index, id, value, name, description, stock,
         <PledgeItemBottom 
           value={value}
           name={name}
+          handleSubmit={handleSubmit}
         />
       }
       

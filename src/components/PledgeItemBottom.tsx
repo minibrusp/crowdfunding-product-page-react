@@ -3,15 +3,21 @@ import React, { useState } from "react"
 type PledgeItemBottomProps = {
 	value: number,
 	name: string,
+  handleSubmit: (e: React.MouseEvent, submittedValue: number) => void,
 }
 
-export default function PledgeItemBottom({ value, name } : PledgeItemBottomProps ) {
+export default function PledgeItemBottom({ value, name, handleSubmit } : PledgeItemBottomProps ) {
 
 	const [initialValue, setValue] = useState(value)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
     setValue(Number(e.target.value))
+  }
+
+  const handleButtonSubmit = (e: React.MouseEvent) => {
+    if(initialValue < value) return
+    handleSubmit(e, initialValue)
   }
 
   return (
@@ -34,6 +40,7 @@ export default function PledgeItemBottom({ value, name } : PledgeItemBottomProps
           </div>
           <button 
             className="bg-primary-moderate-cyan border-none text-white font-bold py-4 px-[1.9rem] rounded-[25px] cursor-pointer hover:bg-primary-dark-cyan"
+            onClick={handleButtonSubmit}
           >Continue</button>
         </div>
 		</div>

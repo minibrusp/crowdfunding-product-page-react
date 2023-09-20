@@ -4,7 +4,7 @@
       "id": 0,
       "name": "Pledge with no reward",
       "description": "Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.",
-      "amount": 0,
+      "amount": 1,
       "stock": 999999999999999999999999999999,
       "selected": false,
       "noreward": true
