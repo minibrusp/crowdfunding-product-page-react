@@ -24,6 +24,7 @@ export const useStatsStore = create<StatsStore>() ((set, get) => ({
         const updated = {
             ...stats,
             backed: stats.backed! + backedAmount,
+            backers: stats.backers! + 1,
         }
         set(() => ({
             stats: updated
