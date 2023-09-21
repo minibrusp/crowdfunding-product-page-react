@@ -10,6 +10,7 @@ type StatsStore = {
     stats: Stats,
     statsContainerRef: HTMLDivElement | null
     fetchStats: (data: string) => Promise<void>,
+    getStatsFromLocalStorage: () => {},
     updateStats: (amount: number) => void,
     SaveStatsContainerRef: (el: HTMLDivElement) => void
 }
@@ -21,6 +22,11 @@ export const useStatsStore = create<StatsStore>() ((set, get) => ({
         const response = await fetch(data)
         const item = await response.json()
         set({ stats: await item[0] })
+        await localStorage.setItem('stats', JSON.stringify(item[0]))
+    },
+    getStatsFromLocalStorage: async () => {
+        const stats = JSON.parse(localStorage.getItem('stats')!)
+        set({ stats: await stats })
     },
     updateStats: (backedAmount: number) => {
         const stats = get().stats
@@ -32,6 +38,7 @@ export const useStatsStore = create<StatsStore>() ((set, get) => ({
         set(() => ({
             stats: updated
         }))
+        localStorage.setItem('stats', JSON.stringify(updated))
     },
     SaveStatsContainerRef: (el: HTMLDivElement) => {
         set({ statsContainerRef: el})

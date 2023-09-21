@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRewardModalStore } from "../stores/useRewardModalStore"
 
 
@@ -8,8 +8,17 @@ function CardCtaButtons() {
   const openRewardModal = useRewardModalStore((state) => state.setIsModalOpen)
 
   const handleBookMarkClick = () => {
-    setIsBookMarked(prev => !prev)
+    setIsBookMarked(prev => {
+      localStorage.setItem('isBookMarked', JSON.stringify(!prev))
+      return !prev
+    })
   }
+
+  useEffect(() => {
+    const bookmarked = localStorage.getItem('isBookMarked')
+    if(!bookmarked) return
+    setIsBookMarked(JSON.parse(bookmarked))
+  }, [])
 
   return (
     <div className="flex justify-center items-center">

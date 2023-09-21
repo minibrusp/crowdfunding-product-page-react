@@ -13,6 +13,7 @@ type Reward = {
 type RewardsStore = {
     rewards: Reward[],
     fetchRewards: (data: string) => Promise<void>,
+    getRewardsFromLocalStorage: () => {},
     setSelected: (id: number) => void,
     setSelectedReward: (id: number) => void,
     resetSelected: () => void,
@@ -23,7 +24,13 @@ export const useRewardsStore = create<RewardsStore>() ((set, get) => ({
     rewards: [],
     fetchRewards: async(data) => {
         const response = await fetch(data)
-        set({ rewards: await response.json() })
+        const result = await response.json()
+        set({ rewards:  await result })
+        await localStorage.setItem('rewards', JSON.stringify(result))
+    },
+    getRewardsFromLocalStorage: async () => {
+        const rewards = JSON.parse(localStorage.getItem('rewards')!)
+        set({ rewards: await rewards })
     },
     setSelected: (id: number) => {
         const rewards = get().rewards
@@ -85,5 +92,6 @@ export const useRewardsStore = create<RewardsStore>() ((set, get) => ({
         set(() => ({
             rewards: updated
         }))
+        localStorage.setItem('rewards', JSON.stringify(updated))
     }
 }))
