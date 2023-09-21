@@ -28,15 +28,15 @@ export default function AboutRewards({ id, name, amount, description, stock} : R
 
   return (
     <div className="rewards_card">
-        <h3 className="text-[0.9rem] font-bold my-[1em] mb-[5px]">{name}</h3>
-        <p className="text-primary-moderate-cyan text-sm font-medium leading-[1.6]">Pledge ${amount.toLocaleString()} or more</p>
-        <p className="text-neutral-dark-gray text-sm my-[23px] leading-[1.6]">{description}</p>
-        <p className="text-neutral-dark-gray text-sm my-[23px] leading-[1.7] flex flex-row items-center">
+        <h3 className="text-[0.9rem] font-bold my-[1em] mb-[5px] md:grid-in-title md:justify-self-center md:m-0">{name}</h3>
+        <p className="text-primary-moderate-cyan text-sm font-medium leading-[1.6] md:grid-in-subtitle md:justify-self-end md:text-[0.9rem]">Pledge ${amount.toLocaleString()} or more</p>
+        <p className="text-neutral-dark-gray text-sm my-[23px] leading-[1.6] md:grid-in-text md:text-justify">{description}</p>
+        <p className="text-neutral-dark-gray text-sm my-[23px] leading-[1.7] flex flex-row items-center md:grid-in-stock md:justify-self-start md:m-0">
             <strong className="text-neutral-black text-[2rem] mr-[10px]">{stock.toLocaleString()}</strong>
             left
         </p>
         <button 
-          className={`text-white text-sm font-bold border-none py-4 px-8 rounded-[25px] ${isOutofStock ? "bg-neutral-dark-gray" : "bg-primary-moderate-cyan"} `}
+          className={`text-white text-sm font-bold border-none py-4 px-8 rounded-[25px] md:grid-in-button md:justify-self-end ${isOutofStock ? "bg-neutral-dark-gray" : "bg-primary-moderate-cyan"} `}
           disabled={isOutofStock}
           onClick={handleBtnOnClick}
         >

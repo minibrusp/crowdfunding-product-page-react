@@ -42,7 +42,7 @@ function Stat({value, type} : StatProps) {
 
   return (
     <p 
-        className="my-[15px] leading-[1.7] text-sm text-neutral-dark-gray even:border-y even:border-solid even:border-[lightgray] even:max-w-[85px] even:mx-auto even:my-0 even:py-[19px]"
+        className="my-[15px] leading-[1.7] text-sm text-neutral-dark-gray even:border-y even:border-solid even:border-[lightgray] even:max-w-[85px] even:mx-auto even:my-0 even:py-[19px] md:m-0 md:mr-10 md:even:m-0 md:even:mr-10 md:even:py-0 md:even:pr-[90px] md:even:pl-[45px] md:even:border-y-0 md:even:max-w-none md:even:border-x md:even:border-[#d3d3d3]"
     >
         <strong 
             className="block text-neutral-black text-[2rem]"

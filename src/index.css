@@ -30,6 +30,7 @@
             px-[23px]
             my-[26px]
             mx-auto
+            md:max-w-[730px]
     }
 
     .rewards_card {
@@ -42,5 +43,10 @@
         border
         border-solid
         border-neutral-dark-gray/30
+        md:grid
+        md:grid-areas-about-reward
+        md:justify-center
+        md:items-center
+        md:p-[30px]
     }
 }

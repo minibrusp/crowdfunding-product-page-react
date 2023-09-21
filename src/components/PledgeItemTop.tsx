@@ -19,9 +19,9 @@ export const PledgeItemTop = ({ index, id, value, name, description, stock, isOu
   const addElementToRef = useRewardModalStore((state) => state.AddModalRewardsRefs)
 
   return (
-    <div className="reward_modal_top py-0 px-[23px]" ref={el => addElementToRef(el!, index)}>
-      <div className="radio_container flex items-center">
-        <span className="m-0 mr-[10px] h-6 w-6 border border-solid border-neutral-black/20 rounded-[50%] flex justify-center items-center cursor-pointer">
+    <div className="reward_modal_top py-0 px-[23px] md:grid md:grid-areas-modal-pledge-top md:grid-cols-[39px_repeat(2,1fr)]  md:items-center md:justify-center md:py-0 md:px-[25px]" ref={el => addElementToRef(el!, index)}>
+      <div className="radio_container flex items-center md:grid-in-radioandspans">
+        <span className="m-0 mr-[10px] h-6 w-6 border border-solid border-neutral-black/20 rounded-[50%] flex justify-center items-center cursor-pointer md:my-0 md:mr-[15px] md:ml-0">
           <input
             id={`${id}`}
             type="radio"
@@ -32,10 +32,10 @@ export const PledgeItemTop = ({ index, id, value, name, description, stock, isOu
             onChange={handleChange}
             
           />
-          <span className={`checkmark w-[calc(100%-10px)] h-[calc(100%-10px)] rounded-[50%] bg-primary-moderate-cyan opacity-0 transition-opacity duration-500 ease-linear ${isSelected && 'peer-checked:opacity-100'}`}></span>
+          <span className={`checkmark w-[calc(100%-10px)] h-[calc(100%-10px)] rounded-[50%] bg-primary-moderate-cyan opacity-0 transition-opacity duration-500 ease-linear ${isSelected && 'peer-checked:opacity-100'} `}></span>
         </span>
-        <span className={`group cursor-pointer text-[0.9rem] hover:font-bold`}>
-          <span className=" font-semibold group-hover:text-primary-moderate-cyan">{name}</span>
+        <span className={`group cursor-pointer text-[0.9rem] hover:font-bold md:flex md:justify-center md:items-center `}>
+          <span className=" font-semibold group-hover:text-primary-moderate-cyan md:mr-5">{name}</span>
           {!noreward && (
             <span className={`block mx-auto text-primary-moderate-cyan font-medium group-hover:font-bold`}>
               Pledge ${`${value}`} or more
@@ -44,7 +44,7 @@ export const PledgeItemTop = ({ index, id, value, name, description, stock, isOu
         </span>
       </div>
       <p
-        className="text-neutral-dark-gray my-[23px] text-sm leading-[1.7]"
+        className="text-neutral-dark-gray my-[23px] text-sm leading-[1.7] md:grid-in-text md:my-5 md:mx-0 md:w-full"
       >{description}</p>
       {!noreward && (
         <p className="text-neutral-dark-gray my-[23px] text-[15px]">

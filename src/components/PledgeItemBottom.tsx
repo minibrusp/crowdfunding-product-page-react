@@ -21,9 +21,9 @@ export default function PledgeItemBottom({ value, name, handleSubmit } : PledgeI
   }
 
   return (
-    <div className="reward_modal_cta_container flex flex-col items-center justify-center border-t border-solid border-neutral-black/20">
-        <p className="text-neutral-dark-gray text-sm leading-[1.7] my-[23px]">Enter your pledge</p>
-        <div className="text-[0.83333125rem] modal_cta flex flex-nowrap justify-evenly items-center w-[50vw]">
+    <div className="reward_modal_cta_container flex flex-col items-center justify-center border-t border-solid border-neutral-black/20 md:w-full md:flex-row md:justify-between md:pt-5 md:pr-[25px] md:pb-0 md:pl-10 md:relative">
+        <p className="text-neutral-dark-gray text-sm leading-[1.7] my-[23px] md:my-5 md:mx-0 md:w-full">Enter your pledge</p>
+        <div className="text-[0.83333125rem] modal_cta flex flex-nowrap justify-evenly items-center w-[50vw] md:justify-end">
           <div className="cta_input_container relative mr-[15px]">
             <input 
               type="number" 

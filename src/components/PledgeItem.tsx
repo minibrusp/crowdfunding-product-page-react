@@ -34,7 +34,7 @@ export default function PledgeItem({ index, id, value, name, description, stock,
 
   return (
     <label 
-			className={`rewards_card py-[23px] px-0 cursor-pointer outline-none block ${isSelected && 'border-2 border-solid border-primary-moderate-cyan'} ${(isOutOfStock) ? 'cursor-default' : '' }  `}
+			className={`rewards_card py-[23px] px-0 cursor-pointer outline-none block ${isSelected && 'border-2 border-solid border-primary-moderate-cyan'} ${(isOutOfStock) ? 'cursor-default' : '' }  md:flex md:flex-col md:pt-[30px] md:pb-5 md:mx-0 md:max-w-[640px] `}
 		>
 
       <PledgeItemTop 

@@ -27,8 +27,21 @@ export default {
         'logo-mastercraft': "url('assets/images/logo-mastercraft.svg')",
         'icon-close-modal': "url('assets/images/icon-close-modal.svg')"
       },
+      gridTemplateAreas: {
+        'about-reward': [
+          "title . subtitle",
+          "text text text",
+          "stock . button"
+        ],
+        'modal-pledge-top': [
+          "radioandspans radioandspans radioandspans . stocks",
+          ". text text text text"
+        ],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@savvywombat/tailwindcss-grid-areas'),
+  ],
 }
 

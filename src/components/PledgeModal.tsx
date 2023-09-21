@@ -16,7 +16,7 @@ export default function PledgeModal() {
 
   return (
     <section 
-        className="bg-neutral-black/50 font-commissioner block absolute left-0 top-0 py-[95px] px-[23px] z-30 h-full w-full"
+        className="bg-neutral-black/50 font-commissioner block absolute left-0 top-0 py-[95px] px-[23px] z-30 h-full w-full md:w-full"
     >
       {
         !isPledgeSuccess ? 

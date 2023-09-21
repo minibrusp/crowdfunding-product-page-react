@@ -15,7 +15,7 @@ export default function PledgeSuccess() {
 	}
 
   return (
-    <div className="success card flex flex-col justify-center items-center fixed left-1/2 top-1/2 w-[83.5vw] max-w-[540px] translate-x-[-50%] translate-y-[-50%] text-center text-[19px]">
+    <div className="success card flex flex-col justify-center items-center fixed left-1/2 top-1/2 w-[83.5vw] max-w-[540px] translate-x-[-50%] translate-y-[-50%] text-center text-[19px] md:max-w-[540px]">
 			<div>
 				<img src={CheckIconSvg} alt="Check Icon" />
 			</div>
