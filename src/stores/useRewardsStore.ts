@@ -12,7 +12,7 @@ type Reward = {
 
 type RewardsStore = {
     rewards: Reward[],
-    fetchRewards: (data: string) => Promise<void>,
+    fetchRewards: () => Promise<void>,
     getRewardsFromLocalStorage: () => {},
     setSelected: (id: number) => void,
     setSelectedReward: (id: number) => void,
@@ -20,10 +20,24 @@ type RewardsStore = {
     reduceStock: (id: number) => void
 }
 
+// const requestHeaders: HeadersInit = new Headers();
+// requestHeaders.set('Content-Type', 'application/json');
+// requestHeaders.set('X-Master-Key', '$2b$10$5M7BV6svTuUGs5VN9YqniO99fwvEsfDtYudnBKC5GcHy9V3rIpw2e');
+// requestHeaders.set('X-Bin-Meta', 'false');
+// requestHeaders.set('X-JSON-Path', '$.rewards.*');
+
 export const useRewardsStore = create<RewardsStore>() ((set, get) => ({
     rewards: [],
-    fetchRewards: async(data) => {
-        const response = await fetch(data)
+    fetchRewards: async() => {
+        const response = await fetch(`https://api.jsonbin.io/v3/b/650c97c212a5d3765981384b`, {
+            method: 'GET',
+            headers: {
+                'X-Master-Key': `$2b$10$5M7BV6svTuUGs5VN9YqniO99fwvEsfDtYudnBKC5GcHy9V3rIpw2e`,
+                'Content-Type': 'application/json',
+                'X-Bin-Meta': 'false',
+                'X-JSON-Path': '$.rewards.*'
+            },
+        })
         const result = await response.json()
         set({ rewards:  await result })
         await localStorage.setItem('rewards', JSON.stringify(result))

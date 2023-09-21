@@ -20,13 +20,16 @@ function App() {
       getRewardsFromLocalStorage()
       return
     }
-    fetchStats('http://localhost:3000/stats')
-    fetchRewards('http://localhost:3000/rewards')
+    // fetchStats('http://localhost:3000/stats')
+    // fetchRewards('http://localhost:3000/rewards')
+    fetchStats()
+    fetchRewards()
   }
 
   useEffect(() => {
     const rewards = localStorage.getItem('rewards')
     const stats = localStorage.getItem('stats')
+    
 
     if(rewards && stats) {
       return initialize("storage")
@@ -41,7 +44,7 @@ function App() {
         <Nav />
       </Header>
       <Main />
-      <Footer />
+      <Footer />  
     </div>
   )
 }
