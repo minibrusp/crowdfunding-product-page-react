@@ -8,12 +8,15 @@ export type Stats = {
 
 type StatsStore = {
     stats: Stats,
+    statsContainerRef: HTMLDivElement | null
     fetchStats: (data: string) => Promise<void>,
-    updateStats: (amount: number) => void
+    updateStats: (amount: number) => void,
+    SaveStatsContainerRef: (el: HTMLDivElement) => void
 }
 
 export const useStatsStore = create<StatsStore>() ((set, get) => ({
     stats: {},
+    statsContainerRef: null,
     fetchStats: async(data) => {
         const response = await fetch(data)
         const item = await response.json()
@@ -29,5 +32,8 @@ export const useStatsStore = create<StatsStore>() ((set, get) => ({
         set(() => ({
             stats: updated
         }))
-    }
+    },
+    SaveStatsContainerRef: (el: HTMLDivElement) => {
+        set({ statsContainerRef: el})
+    },
 }))

@@ -8,15 +8,15 @@ export default function PledgeForm() {
 	const reduceStock = useRewardsStore((state) => state.reduceStock)
 	const setSelected = useRewardsStore((state) => state.setSelected)
 	const updateStats = useStatsStore((state) => state.updateStats)
-	const closeRewardModal = useRewardModalStore((state) => state.setIsModalClose)
 	const resetSelectedReward = useRewardsStore((state) => state.resetSelected)
+	const setIsPledgeSuccess = useRewardModalStore((state) => state.setIsPledgeSuccess)
 
 	const handleFormSubmit = (e: React.MouseEvent, submittedValue: number, id: number) => {
 		e.preventDefault()
 		reduceStock(id)
 		updateStats(submittedValue)
 		resetSelectedReward()
-		closeRewardModal()
+		setIsPledgeSuccess()
 	}
 
   return (
