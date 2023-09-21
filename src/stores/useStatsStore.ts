@@ -16,6 +16,7 @@ type StatsStore = {
 }
 
 const requestHeaders: HeadersInit = new Headers();
+requestHeaders.set('Access-Control-Allow-Origin', '*');
 requestHeaders.set('Content-Type', 'application/json');
 requestHeaders.set('X-Master-Key', '$2b$10$5M7BV6svTuUGs5VN9YqniO99fwvEsfDtYudnBKC5GcHy9V3rIpw2e');
 requestHeaders.set('X-Bin-Meta', 'false');

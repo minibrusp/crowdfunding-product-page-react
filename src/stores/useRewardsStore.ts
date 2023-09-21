@@ -32,6 +32,7 @@ export const useRewardsStore = create<RewardsStore>() ((set, get) => ({
         const response = await fetch(`https://api.jsonbin.io/v3/b/650c97c212a5d3765981384b`, {
             method: 'GET',
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'X-Master-Key': `$2b$10$5M7BV6svTuUGs5VN9YqniO99fwvEsfDtYudnBKC5GcHy9V3rIpw2e`,
                 'Content-Type': 'application/json',
                 'X-Bin-Meta': 'false',
