@@ -1,27 +1,54 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Crowdfunding product page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Design preview for the Crowdfunding product page coding challenge](./public/design/desktop-preview.jpg)
 
-Currently, two official plugins are available:
+## Welcome! 👋
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend Mentor's Crowdfunding product page challenge,
 
-## Expanding the ESLint configuration
+- rebuilt this challenge with react and tryin along with both typescript and zustand.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- states are check if it exist on local storage if not it will fetch on [JSONBIN](https://jsonbin.io/) API and then save it again in the local storage.
 
-- Configure the top-level `parserOptions` property like this:
+- every data state change along with being bookmarked are saved and sync for changes with local storage. 
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Design
+
+Mobile | Desktop
+--- | ---
+![Mobile Design](./public/design/mobile-design.jpg) | ![Desktop Design](./public/design/desktop-design.jpg)
+
+Default | Selected | Completed
+--- | --- | ---
+![Desktop Design](./public/design/desktop-design-modal-default.jpg) | ![Desktop Design](./public/design/desktop-design-modal-selected.jpg) | ![Desktop Design](./public/design/desktop-design-modal-completed.jpg)
+
+Default | Selected | Completed
+--- | --- | ---
+![Mobile Design](./public/design/mobile-design-modal-default.jpg) | ![Mobile Design](./public/design/mobile-design-modal-selected.jpg) | ![Mobile Design](./public/design/mobile-design-modal-completed.jpg)
+
+Default | Bookmarked | Default-Modal | Selected | Completed
+--- | --- | --- | --- | ---
+![Mobile Design](./public/design/active-states-default.jpg) | ![Mobile Design](./public/design/active-states-bookmarked.jpg) | ![Mobile Design](./public/design/active-states-modal-default.jpg) | ![Mobile Design](./public/design/active-states-modal-selected.jpg) | ![Mobile Design](./public/design/active-states-modal-completed.jpg)
+
+
+****
+
+## Links
+
+-   ### Live Site URL : [here](https://crowdfunding-product-page-react-omega.vercel.app/)
+-   ### Frontend Mentor(FEM) Solution URL : [here]()
+
+****
+
+## Built with
+-   ### React
+-   ### Tailwindcss
+-   ### Typescript
+-   ### Vite
+-   ### Zustand
+-   ### Mobile-first workflow
+-   ### JSONBIN for [API](https://jsonbin.io/)
+****
+
