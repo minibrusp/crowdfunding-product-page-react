@@ -21,9 +21,9 @@ function CardCtaButtons() {
   }, [])
 
   return (
-    <div className="flex justify-center items-center md:justify-between md:w-[70%] md:my-0 md:mx-auto">
+    <div className="flex justify-center items-center md:justify-between md:w-[70%] md:my-0 md:mx-auto screen-850:mt-[35px] screen-850:mb-[7px] screen-850:mx-auto screen-1200:w-[90%]">
         <button 
-          className="bg-primary-moderate-cyan border-none text-white font-bold py-4 px-8 first-of-type:text-[0.9rem] first-of-type:w-[55vw] first-of-type:rounded-[30px] hover:bg-primary-dark-cyan md:w-[55vw] md:max-w-[204px]" 
+          className="bg-primary-moderate-cyan border-none text-white font-bold py-4 px-8 first-of-type:text-[0.9rem] first-of-type:w-[55vw] first-of-type:rounded-[30px] hover:bg-primary-dark-cyan md:w-[55vw] md:max-w-[204px] screen-850:first-of-type:text-[15px] screen-850:py-[1.17rem] screen-850:px-0" 
           onClick={() => openRewardModal()}
         >
           Back this project

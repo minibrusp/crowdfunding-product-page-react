@@ -6,7 +6,7 @@ type BurgerProps = {
 
 function Burger({isBurgerOpen, handleBurgerClick} : BurgerProps) {
   return (
-    <>
+    <div className="screen-850:hidden">
       <input 
         type="checkbox" 
         name="burgerMenuCheckbox" 
@@ -22,7 +22,7 @@ function Burger({isBurgerOpen, handleBurgerClick} : BurgerProps) {
       >
         <span className="hidden">Menu</span>
       </label>
-    </>
+    </div>
   )
 }
 

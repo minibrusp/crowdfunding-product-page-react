@@ -38,6 +38,12 @@ export default {
           ". text text text text"
         ],
       },
+      screens: {
+        'screen-850': { 'min': '850px' },
+        'screen-950': { 'min': '950px'},
+        'screen-1200': { 'min': '1200px'},
+        'screen-1440': { 'min': '1440px'},
+      }
     },
   },
   plugins: [

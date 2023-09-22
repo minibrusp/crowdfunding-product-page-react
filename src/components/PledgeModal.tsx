@@ -21,15 +21,15 @@ export default function PledgeModal() {
       {
         !isPledgeSuccess ? 
         (
-          <div className="card">
+          <div className="card screen-850:py-[50px] screen-850:px-[45px]">
               <div className="flex justify-between items-center">
-                  <h2 className="text-[1.1rem] outline-none font-bold">Back this project</h2>
+                  <h2 className="text-[1.1rem] outline-none font-bold screen-850:text-2xl screen-850:mt-0 screen-850:mb-[3px] screen-850:mx-0">Back this project</h2>
                   <span 
                     className="modal__close bg-icon-close-modal bg-no-repeat h-[14px] w-[14px] inline-block cursor-pointer"
                     onClick={handleCloseModalClick}
                   ></span>
               </div>
-              <p className="text-neutral-dark-gray text-sm my-[14px] leading-[1.7] ">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+              <p className="text-neutral-dark-gray text-sm my-[14px] leading-[1.7] screen-850:mx-auto screen-850:mt-[13px] screen-850:mb-[34px] screen-850:text-base">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
               
               <PledgeForm />
           </div>
